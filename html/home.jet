@@ -36,6 +36,7 @@
         <label for="message">Message:</label>
         <input type="text" name="message" id="message" class="form-control" autocomplete="off">
       </div>
+      <input type="hidden" name="action" id="action">
       <hr>
       <div id="output" class="chatbox">
 
@@ -54,6 +55,18 @@
 
       socket.onopen = () => {
         console.log("Successfully connected");
+      }
+
+      socket.onerror = (error) => {
+        console.log("There was an error:", error);
+      }
+
+      socket.onmessage = (msg) => {
+        console.log(msg);
+      }
+
+      socket.onclose = () => {
+        console.log("Connection closed");
       }
     })
   </script>
