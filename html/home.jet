@@ -56,6 +56,7 @@
     let socket = null
     let userInput = document.getElementById("username")
     let messageInput = document.getElementById("message")
+    let o = document.getElementById("output")
 
     window.onbeforeunload = function () {
       console.log("Leaving");
@@ -93,6 +94,10 @@
             }
 
             break;
+
+          case "broadcast":
+            o.innerHTML = o.innerHTML + json.message + "<br>"
+            break
         }
       }
 
