@@ -62,7 +62,8 @@
       }
 
       socket.onmessage = (msg) => {
-        console.log(msg);
+        let json = JSON.parse(msg.data)
+        console.log(json);
       }
 
       socket.onclose = () => {
